@@ -28,9 +28,6 @@ function playerTwoName(){
   document.getElementById("name-1").innerHTML = personTwo;
   return personTwo
 }
-
-  
-  
   
 // ROLL BUTTON
 var roll = document.getElementsByClassName("btn-roll")[0];
@@ -47,7 +44,6 @@ function rollDice(){
   dice.setAttribute("src", "dice-" + num + ".png");
   dice2.setAttribute("src", "dice-" + num2 + ".png");
 }
-
 
 roll.onclick = function() {
   diceRoll()
@@ -77,14 +73,11 @@ function diceRoll(){
   dice2.removeAttribute("hidden","");
 }
 
-
 // SCORE COUNTER
 
     // Active player    
 var player1 = document.getElementsByClassName("player-0-panel")[0]
 var player2 = document.getElementsByClassName("player-1-panel")[0]
-
-
 
 function activePlayer(){
   active = document.getElementsByClassName("active")[0]
@@ -101,14 +94,11 @@ function activeScore(){
   return activeScore
 }
 
-
-
     //Add score
 function addScore(){
   activeScore()
   activeScore().innerHTML = activeScore().innerHTML * 1 + num + num2;
 }
-
 
 // CHANGE PLAYER
 function changePlayer(){
@@ -121,8 +111,6 @@ function changePlayer(){
   }
 }
 
-
-
 // HOLD BUTTON & CURRENT SCORE
 var hold = document.getElementsByClassName("btn-hold")[0];
 
@@ -130,7 +118,6 @@ function activeCurrent(){
   var activeCurrent = activePlayer().getElementsByClassName("player-current-score")[0];
   return activeCurrent
 }
-
 
 function keepScore(){
   activeCurrent().innerHTML = activeCurrent().innerHTML * 1 + activeScore().innerHTML * 1
@@ -144,16 +131,11 @@ hold.onclick = function(){
   holdFunction();
 }
 
-
 function holdFunction(){
   keepScore();
   resetScore();
   changePlayer();
 }
-
-
-
-
 
 // DECLARE PLAYER WON IF REACHES 100 
 // (score, or current score + score)
@@ -168,11 +150,6 @@ function checkWin(){
     hold.onclick = function(){};
     }
   }
-
-  
-  
-
-
 
 // START NEW GANE ON NEW GAME BUTTON CLICK
 var newGame = document.getElementsByClassName("btn-new")[0];
@@ -196,24 +173,6 @@ newGame.onclick = function(){
   dice2.setAttribute("hidden","")
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // CHANGE NAME 
 var nameBox = document.getElementsByClassName("change-name");
 var name1 = document.getElementById("name-0");
@@ -231,8 +190,6 @@ name2.onclick = function(){
     nameBox[1].removeAttribute("hidden")
   }, 300);
 }
-
-
 
 var nameButton = document.getElementsByClassName("name-button");
 var playerName = document.getElementsByClassName("player-name-input");
@@ -252,7 +209,6 @@ nameButton[1].onclick = function(){
   }, 300);
 }
 
-
 // Prevent name form from actually sending http request
 var form = document.getElementsByClassName("name-form");
 form[0].onsubmit = function(){
@@ -264,11 +220,7 @@ form[1].onsubmit = function(){
 }
 
 
-
-
-
 // SET SCORE
-
 
 function score(){
   setScore = document.getElementsByClassName("set")[0].value;
@@ -285,30 +237,3 @@ scoreForm.onsubmit = function(){
   if(typeof(score()*1) === number)
   return false;
 }
-
-
-
-// <label class="set-score" for="score">First to Reach:</label>
-// <input class="set-score" type="text" name="score" value="100">
-
-
-
-
-/*
-Insert box below newgame where you can select here to change target score, which then shows a prompt window where you select how much you want to have as the win amount. Then set if statements to run if both scores and currents are 0, then have box visible, otherwise have it invisible
-*/
-
-
-
-/*
-YOUR 3 CHALLENGES
-Change the game to follow these rules:
-
-1. A player looses his ENTIRE score when he rolls two 6 in a row. After that, it's the next player's turn.
-2. Add an input field to the HTML where players can set the winning score, so that they can change the predefined score of 100. 
-3. Add another dice to the game, so that there are two dices now. The player looses his current score when one of them is a 1. 
-*/
-
-// OWN CHALLANGE    MAKE A BEST OUT OF THREE WITH A GAME WINS COUNTER
-// ALLOW PLAYERS TO CHANGE THEIR NAMES
-// ALLOW PLAYERS TO CHANGE THEIR COLOUR
