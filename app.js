@@ -16,19 +16,19 @@ window.onload = function(){
 }
 
 var personOne, personTwo
-  
+
 function playerOneName(){
   personOne = prompt("Enter name for Player 1", "PLAYER 1");
   document.getElementById("name-0").innerHTML = personOne;
   return personOne
 }
-  
+
 function playerTwoName(){
   personTwo = prompt("Enter name for Player 2", "PLAYER 2");
   document.getElementById("name-1").innerHTML = personTwo;
   return personTwo
 }
-  
+
 // ROLL BUTTON
 var roll = document.getElementsByClassName("btn-roll")[0];
 var dice = document.getElementsByClassName("dice")[0];
@@ -53,17 +53,17 @@ function diceRoll(){
   prev = num;
   prev2 = num2;
   rollDice();
-  if (num == 1 || num2 == 1){    
+  if (num == 1 || num2 == 1){
     setTimeout(function(){alert("You rolled a 1")}, 100);
     resetScore();
-    setTimeout(changePlayer(), 300);  
+    setTimeout(changePlayer(), 300);
   } else if(
-    (prev == 6 || prev2 == 6) && 
-    (num == 6 || num2 == 6) && 
+    (prev == 6 || prev2 == 6) &&
+    (num == 6 || num2 == 6) &&
     prevPlayer == activePlayer()){
       setTimeout(function(){alert("You rolled two 6's in a row")}, 100);
       resetScore();
-      setTimeout(changePlayer(), 300);  
+      setTimeout(changePlayer(), 300);
   } else {
     addScore();
     prevPlayer = activePlayer();
@@ -75,7 +75,7 @@ function diceRoll(){
 
 // SCORE COUNTER
 
-    // Active player    
+    // Active player
 var player1 = document.getElementsByClassName("player-0-panel")[0]
 var player2 = document.getElementsByClassName("player-1-panel")[0]
 
@@ -137,7 +137,7 @@ function holdFunction(){
   changePlayer();
 }
 
-// DECLARE PLAYER WON IF REACHES 100 
+// DECLARE PLAYER WON IF REACHES 100
 // (score, or current score + score)
 function checkWin(){
   if (activeCurrent().innerHTML*1 + activeScore().innerHTML*1 >= score()){
@@ -173,7 +173,7 @@ newGame.onclick = function(){
   dice2.setAttribute("hidden","")
 }
 
-// CHANGE NAME 
+// CHANGE NAME
 var nameBox = document.getElementsByClassName("change-name");
 var name1 = document.getElementById("name-0");
 var name2 = document.getElementById("name-1");
@@ -237,3 +237,17 @@ scoreForm.onsubmit = function(){
   if(typeof(score()*1) === number)
   return false;
 }
+
+
+// GAME Rules
+var info = document.querySelector('.btn-info')
+var rules = document.querySelector('.rules')
+var close = document.querySelector('.btn-close')
+
+info.addEventListener('click', () => {
+  rules.style.visibility = 'visible'
+})
+
+close.addEventListener('click', () => {
+  rules.removeAttribute('style')
+})

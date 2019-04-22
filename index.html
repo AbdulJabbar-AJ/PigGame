@@ -51,6 +51,8 @@
 
       <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
 
+      <button class="btn-info icon"><i class="ion-ios-information-empty"></i></button>
+
       <img src="dice-5.png" alt="Dice" class="dice" hidden>
       <img src="dice-5.png" alt="Dice" class="dice2" hidden>
 
@@ -67,7 +69,26 @@
       </div>
     </div>
 
+    <div class="rules">
+      <button class="btn-close icon"><i class="ion-ios-close-empty"></i></button>
 
+      <h3>Game Rules</h3>
+      <p>The game has 2 players, playing in rounds</p>
+      <ul>
+        <li>
+          In each turn, a player rolls as many times as he whishes. Each result get added to his ROUND score
+        </li>
+        <li>
+          BUT, if the player rolls a 1 OR two 6's in a row, all his ROUND score gets lost. After that, it's the next player's turn
+        </li>
+        <li>
+          The player can choose to 'Hold', which means that his ROUND score gets added to his GLOBAL score (in the red box). After that, it's the next player's turn
+        </li>
+        <li>
+          The first player to reach 100 points on GLOBAL score wins the game
+        </li>
+      </ul>
+    </div>
 
     <script src="app.js"></script>
   </body>

@@ -152,8 +152,19 @@ button:focus {
   outline: none;
 }
 
+button.icon:hover i {
+  margin-right: 15px;
+  margin-top: 3px;
+}
+
 .btn-new {
   top: 45px;
+  padding: 5px;
+}
+
+.btn-info {
+  top: 5px;
+  padding: 5px;
 }
 
 .btn-roll {
@@ -233,4 +244,40 @@ button.name-button {
   width: 25%;
   border-radius: 25% 10%;
   bottom: 9px;
+}
+
+/**********************************************
+*** RULES
+**********************************************/
+
+.rules {
+  visibility: hidden;
+  position: absolute;
+  width: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+  background: #b3b3b3;
+  padding: 100px;
+  list-style: none;
+}
+
+.rules h3 {
+  line-height: 4;
+  text-align: center;
+}
+
+.rules p {
+  line-height: 2;
+}
+
+.rules li {
+  line-height: 1.5;
+}
+
+.btn-close {
+  position: absolute;
+  top: 50px;
+  left: 50px;
 }
